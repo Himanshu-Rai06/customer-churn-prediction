@@ -1,0 +1,3 @@
+Model: GradientBoostingClassifier
+Threshold: 0.206
+Features: ['CreditScore', 'Gender', 'Age', 'Tenure', 'Balance', 'NumOfProducts', 'HasCrCard', 'IsActiveMember', 'EstimatedSalary', 'Geography_Germany', 'Geography_Spain', 'Balance_to_Salary', 'Products_per_Year', 'Age_Tenure_Interaction', 'Engagement_Score']
