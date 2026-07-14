@@ -357,7 +357,7 @@ if page == "1 · Risk Calculator":
 
     # ── LEFT (1) — compact input panel ───────────
     with panel_col:
-        with st.container(border=True, height="stretch"):
+        with st.container(border=True ):
             st.markdown(
                 f"<div style='display:flex;align-items:center;gap:7px;font-weight:600;'>"
                 f"{icon('person', 16)} Demographics</div>",
@@ -442,7 +442,7 @@ if page == "1 · Risk Calculator":
                 st.pyplot(fig_bar, use_container_width=True)
                 plt.close(fig_bar)
 
-        with st.container(border=True, height="stretch"):
+        with st.container(border=True ):
             st.markdown("**Why did the model predict this?**")
             explainer_live = get_shap_explainer(model)
             sv_single      = explainer_live.shap_values(input_df)
@@ -499,7 +499,7 @@ elif page == "2 · Probability Distribution":
     col_l, col_r = st.columns(2)
 
     # ── PROBABILITY HISTOGRAM ────────────────────
-    with col_l, st.container(border=True, height="stretch"):
+    with col_l, st.container(border=True ):
         st.subheader("Predicted probability by actual label")
         fig_hist, ax_hist = plt.subplots(figsize=(6, 4))
         ax_hist.hist(
@@ -529,7 +529,7 @@ elif page == "2 · Probability Distribution":
         )
 
     # ── CONFUSION MATRIX ────────────────────────
-    with col_r, st.container(border=True, height="stretch"):
+    with col_r, st.container(border=True ):
         st.subheader("Confusion matrix at threshold 0.206")
         fig_cm, ax_cm = plt.subplots(figsize=(5, 4))
         sns.heatmap(
@@ -904,7 +904,7 @@ elif page == "4 · What-If Simulator":
 
     wf1, wf2 = st.columns(2)
 
-    with wf1, st.container(border=True, height="stretch"):
+    with wf1, st.container(border=True ):
         st.markdown("**Base profile**")
         shap.waterfall_plot(
             shap.Explanation(
@@ -918,7 +918,7 @@ elif page == "4 · What-If Simulator":
         st.pyplot(plt.gcf(), use_container_width=True)
         plt.close("all")
 
-    with wf2, st.container(border=True, height="stretch"):
+    with wf2, st.container(border=True ):
         st.markdown("**After scenario adjustments**")
         shap.waterfall_plot(
             shap.Explanation(
